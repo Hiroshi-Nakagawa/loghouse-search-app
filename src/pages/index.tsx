@@ -1,3 +1,4 @@
+import { Button } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -14,6 +15,9 @@ const Home: NextPage = () => {
         <h1 className="text-3xl text-red-500 font-bold underline">
           Hello world!
         </h1>
+        <Button component="a" className="ml-4">
+          Next link button
+        </Button>
       </main>
 
       <footer></footer>
