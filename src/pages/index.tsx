@@ -1,33 +1,52 @@
-import { Button } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Explanation } from "src/components/Explanation";
+import { SearchWordList } from "src/components/SearchWordList";
+
+type searchWordType = {
+  id: number;
+  word: string;
+};
+
+const wordList: string[] = [
+  "価格",
+  "中古",
+  "賃貸",
+  "シロアリ",
+  "安く買う",
+  "中古",
+  "賃貸",
+  "シロアリ",
+  "安く買う",
+  "中古",
+  "賃貸",
+  "シロアリ",
+  "安く買う",
+  "中古",
+  "賃貸",
+  "シロアリ",
+  "安く買う",
+  "中古",
+  "賃貸",
+  "シロアリ",
+  "安く買う",
+];
+
+const wordListObject: searchWordType[] = wordList.map((word) => {
+  return { id: Math.random(), word: word };
+});
 
 const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>ログハウス情報検索サイト</title>
+        <title>ログサポート</title>
       </Head>
 
       <main>
-        <h1 className="text-3xl font-bold text-red-500 underline">
-          ログハウス情報の検索をサポートするよ！
-        </h1>
-        <Button component="a" className="ml-4">
-          価格
-        </Button>
-        <Button component="a" className="ml-4">
-          中古
-        </Button>
-        <Button component="a" className="ml-4">
-          賃貸
-        </Button>
-        <Button component="a" className="ml-4">
-          シロアリ
-        </Button>
+        <Explanation />
+        <SearchWordList wordListObject={wordListObject} />
       </main>
-
-      <footer></footer>
     </div>
   );
 };
