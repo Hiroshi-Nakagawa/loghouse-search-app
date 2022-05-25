@@ -88,7 +88,15 @@ const Layout = ({ children }: LayoutProps) => {
                 />
               </MediaQuery>
 
-              <Text>ログサポート</Text>
+              <Text
+                size="xl"
+                variant="link"
+                component="a"
+                href="/"
+                color="gray"
+              >
+                ログサポート
+              </Text>
             </div>
           </Header>
         }
