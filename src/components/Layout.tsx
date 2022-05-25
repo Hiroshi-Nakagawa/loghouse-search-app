@@ -72,7 +72,11 @@ const Layout = ({ children }: LayoutProps) => {
         header={
           <Header height={70} p="md">
             <div
-              style={{ display: "flex", alignItems: "center", height: "100%" }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                height: "100%",
+              }}
             >
               <MediaQuery largerThan="sm" styles={{ display: "none" }}>
                 <Burger
