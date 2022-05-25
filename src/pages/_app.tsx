@@ -2,18 +2,11 @@ import "src/styles/globals.css";
 import type { AppProps } from "next/app";
 import { MantineProvider } from "@mantine/core";
 import Head from "next/head";
+import Layout from "src/components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <meta
-          name="description"
-          content="ログハウスの情報検索をサポートするサイト"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <MantineProvider
         withGlobalStyles
         withNormalizeCSS
@@ -22,7 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           colorScheme: "light",
         }}
       >
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </MantineProvider>
     </>
   );

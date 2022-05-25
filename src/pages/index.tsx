@@ -11,10 +11,19 @@ const Home: NextPage = () => {
 
       <main>
         <h1 className="text-3xl font-bold text-red-500 underline">
-          Hello world!
+          ログハウス情報の検索をサポートするよ！
         </h1>
         <Button component="a" className="ml-4">
-          Next link button
+          価格
+        </Button>
+        <Button component="a" className="ml-4">
+          中古
+        </Button>
+        <Button component="a" className="ml-4">
+          賃貸
+        </Button>
+        <Button component="a" className="ml-4">
+          シロアリ
         </Button>
       </main>
 
