@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { FormTest } from "src/components/FormTest";
+import { FormTest } from "src/components/Form";
 
 const test: NextPage = () => {
   return (

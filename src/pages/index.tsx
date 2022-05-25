@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Explanation } from "src/components/Explanation";
-import { SearchWordList } from "src/components/SearchWordList";
+import { SearchWordList } from "src/components/Form";
 
 type searchWordType = {
   id: number;
