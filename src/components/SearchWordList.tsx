@@ -11,7 +11,7 @@ export const SearchWordList: React.FC<SearchWordListProps> = (props) => {
   return (
     <div>
       {props.wordListObject.map((searchWord: searchWordType) => (
-        <Button key={searchWord.id} component="a" className="m-4">
+        <Button key={searchWord.id} component="a" m={40}>
           {searchWord.word}
         </Button>
       ))}
