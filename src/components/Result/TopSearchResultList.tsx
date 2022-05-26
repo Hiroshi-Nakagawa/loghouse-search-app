@@ -16,7 +16,6 @@ const useFetchList = () => {
 
 export const TopSearchResultList = () => {
   const { data, error, isLoading } = useFetchList();
-  console.log("レンダリング");
   if (isLoading) {
     return <div>ローディング中</div>;
   }

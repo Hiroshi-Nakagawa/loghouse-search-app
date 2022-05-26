@@ -1,7 +1,11 @@
 import { Box, Button, Group, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 
-export const SearchForm = () => {
+type SearchFormProps = {
+  searchWord: string;
+};
+
+export const SearchForm = (props: SearchFormProps) => {
   const form = useForm({
     initialValues: {
       word: "",
@@ -19,6 +23,7 @@ export const SearchForm = () => {
           label="検索ワード"
           placeholder="検索ワードを入力してください"
           {...form.getInputProps("word")}
+          value={props.searchWord}
         />
 
         <Group position="right" mt="md">

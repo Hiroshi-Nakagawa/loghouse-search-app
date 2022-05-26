@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
 import { Explanation } from "src/components/Explanation";
 import { SearchForm, SearchWordList } from "src/components/Form";
 import { TopSearchResultList } from "src/components/Result";
@@ -34,6 +35,7 @@ const wordListObject: searchWordType[] = wordList.map((word) => {
 });
 
 const Home: NextPage = () => {
+  const [searchWord, setSearchWord] = useState("");
   return (
     <div>
       <Head>
@@ -42,8 +44,11 @@ const Home: NextPage = () => {
 
       <main>
         <Explanation />
-        <SearchWordList wordListObject={wordListObject} />
-        <SearchForm />
+        <SearchWordList
+          wordListObject={wordListObject}
+          setSearchWord={setSearchWord}
+        />
+        <SearchForm searchWord={searchWord} />
         <TopSearchResultList />
       </main>
     </div>
