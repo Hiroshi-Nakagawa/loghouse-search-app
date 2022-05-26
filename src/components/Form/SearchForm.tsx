@@ -1,5 +1,4 @@
 import { Box, Button, Group, TextInput } from "@mantine/core";
-import { useCallback } from "react";
 import { SearchFormProps } from "./type";
 
 export const SearchForm = (props: SearchFormProps) => {
