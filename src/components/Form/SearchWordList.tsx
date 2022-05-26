@@ -1,4 +1,4 @@
-import { Box, Button, Input, Text } from "@mantine/core";
+import { Input } from "@mantine/core";
 import React from "react";
 import { searchWordType } from "src/pages/type";
 import { SearchWordListPropsType } from "./type";
