@@ -1,12 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Explanation } from "src/components/Explanation";
-import { SearchWordList } from "src/components/Form";
-
-type searchWordType = {
-  id: number;
-  word: string;
-};
+import { SearchForm, SearchWordList } from "src/components/Form";
+import { searchWordType } from "./type";
 
 const wordList: string[] = [
   "価格",
@@ -46,6 +42,7 @@ const Home: NextPage = () => {
       <main>
         <Explanation />
         <SearchWordList wordListObject={wordListObject} />
+        <SearchForm />
       </main>
     </div>
   );
