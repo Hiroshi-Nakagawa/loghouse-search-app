@@ -18,9 +18,12 @@ export const SearchWordList: React.FC<SearchWordListPropsType> = (props) => {
         <Input
           onClick={handleAddSearchWord}
           key={searchWord.id}
+          value={searchWord.word}
           component="button"
           m={40}
-          value={searchWord.word}
+          radius="sm"
+          size="sm"
+          className="inline-block"
         >
           {searchWord.word}
         </Input>
