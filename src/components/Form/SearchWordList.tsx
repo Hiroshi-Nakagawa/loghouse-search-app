@@ -9,7 +9,7 @@ export const SearchWordList: React.FC<SearchWordListPropsType> = (props) => {
   ) => {
     props.form.setFieldValue(
       "word",
-      props.form.values.word + (e.target as HTMLInputElement).value
+      props.form.values.word + " " + (e.target as HTMLInputElement).value
     );
   };
   return (
