@@ -1,0 +1,1 @@
+export { TopSearchResultList } from "./TopSearchResultList";

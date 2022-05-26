@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Explanation } from "src/components/Explanation";
 import { SearchForm, SearchWordList } from "src/components/Form";
+import { TopSearchResultList } from "src/components/Result";
 import { searchWordType } from "./type";
 
 const wordList: string[] = [
@@ -43,6 +44,7 @@ const Home: NextPage = () => {
         <Explanation />
         <SearchWordList wordListObject={wordListObject} />
         <SearchForm />
+        <TopSearchResultList />
       </main>
     </div>
   );
