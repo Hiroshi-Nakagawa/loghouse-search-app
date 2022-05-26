@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import { fetcher } from "src/util/fetcher";
-import { List } from "@mantine/core";
+import { List, ThemeIcon } from "@mantine/core";
+import { CircleCheck } from "tabler-icons-react";
 
 const API_URL = "https://jsonplaceholder.typicode.com/users";
 
@@ -24,7 +25,16 @@ export const TopSearchResultList = () => {
     return <div>{error.message}</div>;
   }
   return (
-    <List>
+    <List
+      spacing="xs"
+      size="sm"
+      center
+      icon={
+        <ThemeIcon color="teal" size={24} radius="xl">
+          <CircleCheck size={16} />
+        </ThemeIcon>
+      }
+    >
       {data.map((user: any) => {
         return <List.Item key={user.id}>{user.name}</List.Item>;
       })}
