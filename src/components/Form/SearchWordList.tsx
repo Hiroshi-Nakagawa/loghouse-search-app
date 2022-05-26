@@ -7,10 +7,10 @@ export const SearchWordList: React.FC<SearchWordListPropsType> = (props) => {
   const handleAddSearchWord: React.MouseEventHandler<HTMLButtonElement> = (
     e
   ) => {
-    props.setSearchWord((prevSearchWord) => {
-      e.preventDefault;
-      return prevSearchWord + (e.target as HTMLInputElement).value;
-    });
+    props.form.setFieldValue(
+      "word",
+      props.form.values.word + (e.target as HTMLInputElement).value
+    );
   };
   return (
     <div>

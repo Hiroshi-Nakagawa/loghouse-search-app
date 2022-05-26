@@ -1,29 +1,20 @@
 import { Box, Button, Group, TextInput } from "@mantine/core";
-import { useForm } from "@mantine/form";
-
-type SearchFormProps = {
-  searchWord: string;
-};
+import { useCallback } from "react";
+import { SearchFormProps } from "./type";
 
 export const SearchForm = (props: SearchFormProps) => {
-  const form = useForm({
-    initialValues: {
-      word: "",
-    },
-
-    validate: {
-      word: (value) => (value.length > 20 ? "検索ワードが長すぎます" : null),
-    },
-  });
   return (
     <Box sx={{ maxWidth: 600 }} mx="auto">
-      <form onSubmit={form.onSubmit((values) => console.log(values))}>
+      <form onSubmit={props.form.onSubmit((values) => console.log(values))}>
         <TextInput
           required
           label="検索ワード"
           placeholder="検索ワードを入力してください"
-          {...form.getInputProps("word")}
-          value={props.searchWord}
+          {...props.form.getInputProps("word")}
+          value={props.form.values.word}
+          onChange={(e) => {
+            props.form.setFieldValue("word", e.currentTarget.value);
+          }}
         />
 
         <Group position="right" mt="md">

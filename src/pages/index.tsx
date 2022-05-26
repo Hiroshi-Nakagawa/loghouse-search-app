@@ -1,6 +1,6 @@
+import { useForm } from "@mantine/form";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useState } from "react";
 import { Explanation } from "src/components/Explanation";
 import { SearchForm, SearchWordList } from "src/components/Form";
 import { TopSearchResultList } from "src/components/Result";
@@ -35,7 +35,14 @@ const wordListObject: searchWordType[] = wordList.map((word) => {
 });
 
 const Home: NextPage = () => {
-  const [searchWord, setSearchWord] = useState("");
+  const form = useForm({
+    initialValues: {
+      word: "",
+    },
+    validate: {
+      word: (value) => (value.length > 20 ? "検索ワードが長すぎます" : null),
+    },
+  });
   return (
     <div>
       <Head>
@@ -44,11 +51,8 @@ const Home: NextPage = () => {
 
       <main>
         <Explanation />
-        <SearchWordList
-          wordListObject={wordListObject}
-          setSearchWord={setSearchWord}
-        />
-        <SearchForm searchWord={searchWord} />
+        <SearchWordList wordListObject={wordListObject} form={form} />
+        <SearchForm form={form} />
         <TopSearchResultList />
       </main>
     </div>
